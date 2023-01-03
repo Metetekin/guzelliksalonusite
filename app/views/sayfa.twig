@@ -1,0 +1,36 @@
+{% include 'header.twig' %}
+
+<section class="beautypress-inner-welocme-section beautypress-bg parallax-bg" data-parallax="scroll" data-image-src="{{ page['page_image'] }}">
+   <div class="beautypress-black-overlay"></div>
+   <div class="container">
+      <div class="beautypress-inner-welcome-content">
+         <img src="img/inner-welcome-icon.png" alt="">
+         <h1 class="color-white">{{ page['page_name'] }}</h1>
+         <p class="color-white">Sandra Epilasyon, her zaman güleryüzlü ve alanlarında uzman çalışanlarıyla kaliteli hizmetler vermek, müşterilerine hijyenik bir ortamda çeşitli uygulamalar sunarak uzun soluklu ilişkiler kurmayı amaç edinmiştir.</p>
+      </div>
+      <div class="beautypress-inner-welcome-footer-content">
+         <ul class="beautypress-breadcrumb">
+            <li><a href="">Ana Sayfa</a></li>
+            <li><a href="">{{ page['page_name'] }}</a></li>
+         </ul>
+      </div>
+   </div>
+</section>
+
+<section class="beautypress-blog-post-section section-padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="beautypress-blog-post-group">
+               <div class="beautypress-blog-post-wraper">
+                  {{ page["page_content"] }}
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+
+{% include 'footer.twig' %}

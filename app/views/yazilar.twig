@@ -1,0 +1,54 @@
+{% include 'header.twig' %}
+
+
+<section class="beautypress-inner-welocme-section beautypress-bg parallax-bg" data-parallax="scroll" data-image-src="img/blog_bg.jpg">
+   <div class="beautypress-black-overlay"></div>
+   <div class="container">
+      <div class="beautypress-inner-welcome-content">
+         <img src="img/inner-welcome-icon.png" alt="">
+         <h1 class="color-white">Blog Yazıları</h1>
+         <p class="color-white">Sandra Epilasyon, her zaman güleryüzlü ve alanlarında uzman çalışanlarıyla kaliteli hizmetler vermek, müşterilerine hijyenik bir ortamda çeşitli uygulamalar sunarak uzun soluklu ilişkiler kurmayı amaç edinmiştir.</p>
+      </div>
+      <div class="beautypress-inner-welcome-footer-content">
+         <ul class="beautypress-breadcrumb">
+            <li><a href="">Ana Sayfa</a></li>
+            <li><a href="">Blog</a></li>
+         </ul>
+      </div>
+   </div>
+</section>
+
+<section class="beautypress-blog-post-section section-padding">
+   <div class="container">
+      <div class="row">
+   
+                       {% for blog in blogList %}  
+         <div class="col-md-12 col-sm-12 col-xl-4 col-lg-4">
+            <div class="beautypress-single-newsletter">
+               <div class="beautypress-newsfeed-header beautypress-purple-overlay beautypress-light-overlay">
+                  <img src="{{ blog["page_image"] }}" alt="">
+                  <div class="beautypress-newsfeed-header-content">
+                     <div class="beautypress-newsfeed-img">
+                        <img src="img/avatar-7.jpg" alt="">
+                        <a href="yazilar/{{ blog["page_get"] }}">Yazar: Yönetici</a>
+                     </div>
+                     <div class="beautypress-dates">
+                        <p class="bg-color-purple"><i class="fa fa-clock-o" aria-hidden="true"></i><strong>{{ blog["page_date"] }}</strong></p>
+                     </div>
+                  </div>
+               </div>
+               <div class="beautypress-newsfeed-footer">
+                  <a href="yazilar/{{ blog["page_get"] }}">{{ blog["page_name"] }}</a>
+                 <a href="yazilar/{{ blog['page_get'] }}" class="xs-btn round-btn box-shadow-btn bg-color-purple" style="color:white;"><center>Yazıyı Oku</center></a>
+               </div>
+            </div>
+         </div>
+        {% endfor %}     
+
+                 
+              
+      </div>
+   </div>
+</section>
+
+{% include 'footer.twig' %}

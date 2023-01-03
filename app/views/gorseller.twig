@@ -1,0 +1,47 @@
+{% include 'header.twig' %}
+
+<!--Start breadcrumb area-->     
+<section class="breadcrumb-area" style="background-image: url(assets_theme/images/breadcrumb/breadcrumb-1.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div class="inner-content clearfix">
+                    <div class="title">
+                       <h1>Görseller</h1>
+                    </div>
+                    <div class="breadcrumb-menu">
+                        <ul class="clearfix">
+                            <li><a href="/">Galeri</a></li>
+                            <li><span class="flaticon-next-1"></span></li>
+                            <li class="active">Görseller</li>
+                        </ul>    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End breadcrumb area-->
+<!--Start About Style1 Area-->
+<section class="about-style1-area bg-white">
+
+  <div class="container">
+      <div class="row">
+
+        {% for file in fileList %}  
+         <div class="col-lg-6">
+            <div class="main-img">
+               <img src="{{ file['file_url'] }}" alt="{{ file['file_name'] }}">
+               <hr>
+               <center><h5>{{ file['file_name'] }}</h5></center>
+               <br>
+            </div>
+         </div>
+        {% endfor %} 
+      </div>
+   </div>
+   </div>
+   </section>
+
+{% include 'footer.twig' %}
+

@@ -1,0 +1,132 @@
+<!doctype html>
+<!--[if lt IE 7]>      
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="tr">
+   <![endif]-->
+   <!--[if IE 7]>         
+   <html class="no-js lt-ie9 lt-ie8" lang="tr">
+      <![endif]-->
+      <!--[if IE 8]>         
+      <html class="no-js lt-ie9" lang="tr">
+         <![endif]-->
+         <!--[if gt IE 8]><!--> 
+         <html class="no-js" lang="tr">
+            <!--<![endif]-->
+            <head>
+               <meta charset="utf-8">
+               <meta http-equiv="X-UA-Compatible" content="IE=edge">
+               <base href="{{ site['url'] }}/">
+
+              <meta name="viewport" content="width=device-width"/>
+              <meta charSet="utf-8"/>
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <title>{{ title }}</title>
+              <meta name="keywords" content="{{ keywords }}">
+              <meta name="description" content="{{ description }}">
+              {% if site['favicon'] %}
+              <link rel="shortcut icon" type="image/ico" href="{{ site['favicon'] }}" />
+              {% endif %}      
+
+               <meta name="viewport" content="width=device-width, initial-scale=1">
+               <link href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700%7CNiconne" rel="stylesheet">
+               <link rel="icon" type="image/png" href="favicon.ico">
+               <link rel="stylesheet" href="css/bootstrap.min.css">
+               <link rel="stylesheet" href="css/bootstrap-datepicker.min.css">
+               <link rel="stylesheet" href="css/font-awesome.min.css">
+               <link rel="stylesheet" href="css/xs-icon.css">
+               <link rel="stylesheet" href="css/owl.carousel.min.css">
+               <link rel="stylesheet" href="css/themeSwither.css">
+               <link rel="stylesheet" href="css/isotope.css">
+               <link rel="stylesheet" href="css/magnific-popup.css">
+               <link rel="stylesheet" href="css/plugins.css" />
+               <link rel="stylesheet" href="css/style.css">
+               <link rel="stylesheet" href="css/responsive.css" />
+            </head>
+            <body>
+               <!--[if lt IE 8]>
+               <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+               <![endif]-->
+               <div id="preloader">
+                  <div class="preloader-window left-window"></div>
+                  <div class="preloader-window right-window"></div>
+                  <div class="preloader-content">
+                     <img src="img/prelaoder-logo.png" alt="">
+                  </div>
+                  <div class="spinner-block">
+                     <div class="spinner-eff spinner-eff-3">
+                        <div class="circle circle-1"></div>
+                        <div class="circle circle-2"></div>
+                        <div class="circle circle-3"></div>
+                     </div>
+                  </div>
+               </div>
+               <main class="xs-main-content">
+               <header class="beautypress-header-section beautypress-version-1 beautypress-extra-css menu-skew bg-color-purple header-height-calc-minus navbar-fixed">
+                  <div class="container">
+                     <div class="beautypress-logo-wraper">
+                        <a href="/" class="beautypress-logo beautypress-version-2  beautypress-version-4">
+                        <img src="{{ site['logo'] }}" alt="">
+                        </a>
+                     </div>
+                  </div>
+                  <div class="beautypress-header-top">
+                     <div class="container">
+                        <ul class="beautypress-simple-iocn-list beautypress-version-1">
+                           <li><i class="xsicon icon-call"></i>{{ settings['site_telephone'] }}</li>
+                           <li><i class="xsicon icon-envelope"></i>{{ settings['site_mail'] }}</li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="beautypress-main-header color-white">
+                     <div class="container">
+                        <nav class="xs_nav beautypress-nav beautypress-mega-menu">
+                           <div class="nav-header">
+                              <div class="nav-toggle"></div>
+                           </div>
+                           <div class="nav-menus-wrapper">
+                              <ul class="nav-menu">
+                                 <li>
+                                    <a href="/">Ana Sayfa</a>
+                                 </li>
+                                 <li>
+                                    <a href="#">Kurumsal</a>
+                                    <ul class="nav-dropdown">
+                                       <li><a href="sayfa/hakkimizda">Hakkımızda</a></li>
+                                       <li><a href="banka-hesaplari">Banka Hesapları</a></li>
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="#">Hizmetlerimiz</a>
+                                    <ul class="nav-dropdown">
+                                     {% for service in serviceList %}
+                                       <li><a href="hizmetler/{{ service['page_get'] }}">{{ service['page_name'] }}</a></li>
+                                     {% endfor %}  
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="#">Fiyatlar</a>
+                                    <ul class="nav-dropdown">  
+                                      {% for category in categoryList %}
+                                        <li><a href="kategori/{{ category['category_url'] }}">{{ category['category_name'] }}</a></li>
+                                      {% endfor %}    
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="#">Sayfalar</a>
+                                    <ul class="nav-dropdown">  
+                                     {% for page in pageList %}
+                                       <li><a href="sayfa/{{ page['page_get'] }}">{{ page['page_name'] }}</a></li>
+                                     {% endfor %}    
+                                    </ul>
+                                 </li>
+                                 <li>
+                                    <a href="yazilar">Yazılar</a>
+                                 </li>
+                                 <li>
+                                    <a href="iletisim">İletişim</a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </nav>
+                     </div>
+                  </div>
+               </header>

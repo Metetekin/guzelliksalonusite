@@ -1,0 +1,88 @@
+{% include 'header.twig' %}
+
+<section class="beautypress-inner-welocme-section beautypress-bg" style="background-image: url(img/inner-section-bg.jpg);">
+   <div class="beautypress-black-overlay"></div>
+   <div class="container">
+      <div class="beautypress-inner-welcome-content">
+         <img src="img/inner-welcome-icon.png" alt="">
+         <h1 class="color-white">{{ product['product_name'] }}</h1>
+         <p class="color-white">Sandra Epilasyon, her zaman güleryüzlü ve alanlarında uzman çalışanlarıyla kaliteli hizmetler vermek, müşterilerine hijyenik bir ortamda çeşitli uygulamalar sunarak uzun soluklu ilişkiler kurmayı amaç edinmiştir.</p>
+      </div>
+      <div class="beautypress-inner-welcome-footer-content">
+         <ul class="beautypress-breadcrumb">
+            <li><a href="">Ana sayfa</a></li>
+            <li><a href="">Ödeme Yap</a></li>
+         </ul>
+      </div>
+   </div>
+</section>
+<div class="beautypress-shop-single-page section-padding product">
+
+
+<div>
+
+    <form method="POST" action="">
+        <div class="container">
+        {% if errorText %}
+            <div class="alert alert-dismissible alert-danger">
+               {{ errorText }}
+            </div>
+            <hr>
+        {% endif %}
+        {% if successText %}
+            <div class="alert alert-dismissible alert-success">
+               {{ successText }}
+            </div>
+            <hr>
+        {% endif %}
+   <div class="row">
+      <div class="col-lg-4 col-md-6">
+         <label>Ad Soyad</label>
+         <div class="form-group">
+            <input type="text" class="form-control" name="name" required>
+         </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+         <label>Telefon Numarası</label>
+         <div class="form-group">
+            <input type="text" class="form-control" name="telephone" required>
+         </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+         <label>E-Posta Adresi</label>
+         <div class="form-group">
+            <input type="email" class="form-control" name="email" required>
+         </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+         <div class="form-group">
+            <label>Ödeme Yöntemi</label>
+            <select class="form-control" name="payment_type">
+                {% for payment in paymentsList %}
+                  <option value="{{ payment['id'] }}">{{ payment['method_name'] }}</option>
+                {% endfor %}
+            </select>
+         </div>
+      </div>
+      <div class="col-lg-8">
+         <div class="form-group">
+            <label>Adres</label>
+            <textarea class="form-control" name="address" placeholder="İL / İLÇE / MAHALLE / CADDE VEYA SOKAK / DIŞ KAPI NUMARASI / DAİRE NUMARASI"></textarea>
+         </div>
+      </div>    
+            <div class="col-lg-12">
+         <div class="form-group">
+            <label>Sipariş Notunuz</label>
+            <textarea class="form-control" rows="5" name="order_note" placeholder="Teşekkürler..."></textarea>
+         </div>
+      </div>    
+      <div class="col-lg-12 col-md-12">
+         <button type="submit" class="xs-btn round-btn box-shadow-btn bg-color-purple">Ödeme Yap ({{ product['product_price'] }}{{ currency }})</button>
+      </div>
+      </form>
+   </div>
+   </div>
+</div>
+</div>
+
+{% include 'footer.twig' %}

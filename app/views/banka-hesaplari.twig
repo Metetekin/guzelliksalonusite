@@ -1,0 +1,73 @@
+{% include 'header.twig' %}
+
+
+<section class="beautypress-inner-welocme-section beautypress-bg parallax-bg" data-parallax="scroll" data-image-src="img/team_bg.jpg">
+   <div class="beautypress-black-overlay"></div>
+   <div class="container">
+      <div class="beautypress-inner-welcome-content">
+         <img src="img/inner-welcome-icon.png" alt="">
+         <h1 class="color-white">Banka Hesapları</h1>
+         <p class="color-white">Sandra Epilasyon, her zaman güleryüzlü ve alanlarında uzman çalışanlarıyla kaliteli hizmetler vermek, müşterilerine hijyenik bir ortamda çeşitli uygulamalar sunarak uzun soluklu ilişkiler kurmayı amaç edinmiştir.</p>
+      </div>
+      <div class="beautypress-inner-welcome-footer-content">
+         <ul class="beautypress-breadcrumb">
+            <li><a href="">Ana Sayfa</a></li>
+            <li><a href="">Banka Hesapları</a></li>
+         </ul>
+      </div>
+   </div>
+</section>
+
+<section class="beautypress-blog-post-section section-padding">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="beautypress-blog-post-group">
+               <div class="beautypress-blog-post-wraper">
+
+<div class="container">
+      <div class="row">
+
+                  {% for bank in bankAccounts %}  
+
+          
+         <div class="col-lg-4 col-md-6">
+            <div class="pricing-content">
+               <center><img src="{{ bank['bank_gorsel'] }}" style="height: 80px; margin-bottom: 4px; padding: 5px; border-style: dotted; color: #6a1b9a;"></center>
+               <hr>
+               <h3>{{ bank['bank_name'] }}</h3>
+
+                <table class="table">
+                
+                  <tbody>
+                    <tr>
+                      <th scope="row">Ad Soyad</th>
+                      <td>{{ bank['bank_alici'] }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">IBAN</th>
+                      <td><code>{{ bank['bank_iban'] }}</code></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Hesap No</th>
+                      <td>{{ bank['bank_hesap'] }}</td>
+                    </tr>
+                       <tr>
+                      <th scope="row">Şube</th>
+                      <td>{{ bank['bank_sube'] }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+         </div>
+         {% endfor %}
+      </div>
+   </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+{% include 'footer.twig' %}

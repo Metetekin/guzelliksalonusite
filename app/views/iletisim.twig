@@ -1,0 +1,111 @@
+{% include 'header.twig' %}
+
+
+<section class="beautypress-inner-welocme-section beautypress-bg parallax-bg" data-parallax="scroll" data-image-src="img/contact_header_bg.jpg">
+   <div class="beautypress-black-overlay"></div>
+   <div class="container">
+      <div class="beautypress-inner-welcome-content">
+         <img src="img/inner-welcome-icon.png" alt="">
+         <h1 class="color-white">İletişim</h1>
+         <p class="color-white">Sandra Epilasyon, her zaman güleryüzlü ve alanlarında uzman çalışanlarıyla kaliteli hizmetler vermek, müşterilerine hijyenik bir ortamda çeşitli uygulamalar sunarak uzun soluklu ilişkiler kurmayı amaç edinmiştir.</p>
+      </div>
+      <div class="beautypress-inner-welcome-footer-content">
+         <ul class="beautypress-breadcrumb">
+            <li><a href="">Ana Sayfa</a></li>
+            <li><a href="">Bize Ulaşın</a></li>
+         </ul>
+      </div>
+   </div>
+</section>
+
+<section class="beautypress-contact-us-section">
+   <div class="container">
+      <div class="beautypress-contact-wraper beautypress-version-2">
+         <div class="row">
+            <div class="col-sm-12 col-lg-8 col-xl-8">
+               <div class="beautypress-contact-form">
+                  <h2>Bize Ulaşın</h2>
+         <form method="POST" action="">   
+        {% if errorText %}
+            <div class="alert alert-dismissible alert-danger">
+               {{ errorText }}
+            </div>
+            <hr>
+        {% endif %}
+        {% if successText %}
+            <div class="alert alert-dismissible alert-success">
+               {{ successText }}
+            </div>
+            <hr>
+        {% endif %}
+            <div class="row">
+                    
+                
+               <div class="col-lg-4 col-md-6">
+                  <div class="form-group">
+                     <input type="text" name="name" id="name" class="form-control" required data-error="Lütfen ad soyad yazınız" placeholder="Ad Soyad" required>
+                     <div class="help-block with-errors"></div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-6">
+                  <div class="form-group">
+                     <input type="email" name="email" id="email" class="form-control" required data-error="Lütfen e-posta adresi yazınız" placeholder="E-Posta Adresi" required>
+                     <div class="help-block with-errors"></div>
+                  </div>
+               </div>
+               <div class="col-lg-4 col-md-12">
+                  <div class="form-group">
+                     <input type="text" name="telephone" id="phone_number" required data-error="Lütfen telefon numarası yazınız" class="form-control" placeholder="Telefon Numarası" required>
+                     <div class="help-block with-errors"></div>
+                  </div>
+               </div>
+               <div class="col-md-12 col-lg-12">
+                  <div class="form-group">
+                     <input type="text" name="subject" id="phone_number" required data-error="Lütfen mesaj başlığı yazınız" class="form-control" placeholder="Mesaj Başlığı" required>
+                     <div class="help-block with-errors"></div>
+                  </div>
+               </div>
+               <div class="col-md-12 col-lg-12">
+                  <div class="form-group">
+                     <textarea name="message" class="form-control" id="message" rows="6" required data-error="Lütfen mesaj içeriği yazınız" placeholder="Mesaj İçeriği" required></textarea>
+                     <div class="help-block with-errors"></div>
+                  </div>
+               </div>
+               
+                  {% if captcha %}
+                    <div class="form-group col-md-12">
+                      <div class="g-recaptcha" data-sitekey="{{ captchaKey }}"></div>
+                    </div>
+                  {% endif %}
+
+               
+               <div class="col-md-12 col-lg-12">
+                  <button type="submit" class="xs-btn round-btn box-shadow-btn bg-color-purple">Mesajı Gönder</button>
+                  <div class="clearfix"></div>
+               </div>
+            </div>
+         </form>
+      
+               </div>
+            </div>
+            <div class="col-sm-12 col-lg-4 col-xl-4">
+               <div class="beautypress-contact-details bg-color-purple">
+                  <div class="beautypress-separetor-sub-heading beautypress-version-2">
+                     <h2>İletişim Bilgileri</h2>
+                  </div>
+                  <ul class="beautypress-icon-with-text">
+                     <li><i class="fa fa-map-marker"></i> {{ settings["site_address"] }}</li>
+                     <li><i class="xsicon icon-phone3"></i> {{ settings["site_telephone"] }}</li>
+                     <li><i class="xsicon icon-envelope5"></i> {{ settings["site_mail"] }}</li>
+                     <li><i class="fa fa-instagram"></i> @instagram</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<script type="text/javascript" src="https://www.google.com/recaptcha/api.js"></script>
+
+{% include 'footer.twig' %}
